@@ -9,7 +9,6 @@ export default function Product({ imageSource, title, price }) {
       <div className="info-text">
         <div class="description">
           <div class="title">{title}</div>
-
           <div className="price">{price}</div>
           <button className="add-button">Ajouter</button>
         </div>
