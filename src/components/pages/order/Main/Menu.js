@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../theme";
+import Product from "./Product";
 
 export default function Menu() {
   const [menu, setmenu] = useState(fakeMenu2);
@@ -10,18 +11,11 @@ export default function Menu() {
     <MenuStyled className="menu">
       {menu.map((produit) => {
         return (
-          <div className="produit">
-            <div className="image">
-              <img src={produit.imageSource} alt={produit.title}></img>
-            </div>
-            <div className="info-text">
-              <div class="title">{produit.title}</div>
-              <div class="description">
-                <div className="price">{produit.price}</div>
-                <button className="add-button">Ajouter</button>
-              </div>
-            </div>
-          </div>
+          <Product
+            imageSource={produit.imageSource}
+            title={produit.title}
+            price={produit.price}
+          />
         );
       })}
     </MenuStyled>
@@ -35,20 +29,4 @@ const MenuStyled = styled.div`
   padding: 50px 50px 150px;
   justify-items: center;
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
-
-  .produit {
-    background: red;
-    width: 240px;
-    height: 330px;
-    .image {
-      border: 1px solid fuchsia;
-      width: 100px;
-      height: auto;
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
 `;
