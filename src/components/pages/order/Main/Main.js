@@ -21,6 +21,7 @@ const MainStyled = styled.div`
   display: grid;
   grid-template-columns: 1fr; // fr me permet d'occuper le reste dispo
   /* grid-template-columns: 25% 1fr; // fr me permet d'occuper le reste dispo */
+  overflow-y: scroll;
 
   /* .basket {
     background: pink;
